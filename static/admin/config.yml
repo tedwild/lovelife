@@ -1,49 +1,18 @@
 backend:
   name: github
-  repo: tedwild/lovelife  # 你的GitHub仓库
+  repo: tedwild/lovelife
   branch: main
-  base_url: https://lovelifeandhave.fun
-  auth_type: implicit  # 使用隐式OAuth
-  auth_endpoint: https://lovelifeandhave.fun/admin/auth
-  
-  commit_messages:
-    create: 'Create {{collection}} "{{slug}}"'
-    update: 'Update {{collection}} "{{slug}}"'
-    delete: 'Delete {{collection}} "{{slug}}"'
-    uploadMedia: '[skip ci] Upload "{{path}}"'
-    deleteMedia: '[skip ci] Delete "{{path}}"'
 
-# 媒体文件存储
-media_folder: "static/images/uploads"  # 上传的图片存储位置
-public_folder: "/images/uploads"       # 在网站中访问的路径
+media_folder: "static/images"
+public_folder: "/images"
 
-# 站点配置
-site_url: "https://lovelifeandhave.fun"  # 你的网站地址
-display_url: "https://lovelifeandhave.fun"
-logo_url: "https://lovelifeandhave.fun/logo.png"  # 可选：CMS logo
-
-# 内容编辑器配置
-locale: 'zh'  # 中文界面，如果需要英文可以改为'en'
-
-# 内容集合（根据你的需求配置）
 collections:
-  - name: "posts"  # 用于博客文章
+  - name: "posts"
     label: "文章"
-    folder: "content/posts"  # Hugo的posts目录
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - {label: "标题", name: "title", widget: "string"}
-      - {label: "发布日期", name: "date", widget: "datetime"}
-      - {label: "正文", name: "body", widget: "markdown"}
-      - {label: "描述", name: "description", widget: "string", required: false}
-      - {label: "标签", name: "tags", widget: "list", required: false}
-
-  - name: "pages"  # 用于页面
-    label: "页面"
-    folder: "content"
+    folder: "content/posts"
     create: true
     slug: "{{slug}}"
     fields:
       - {label: "标题", name: "title", widget: "string"}
+      - {label: "发布日期", name: "date", widget: "datetime"}
       - {label: "正文", name: "body", widget: "markdown"}

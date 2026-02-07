@@ -15,3 +15,12 @@ theme = "paper"
 [params]
   author = "你的名字"
   description = "网站描述"
+
+
+# 允许CSS和JS在admin目录
+[markup.goldmark.renderer]
+unsafe = true
+
+# 如果你想让/admin页面可访问
+[params]
+  enableDecapCMS = true

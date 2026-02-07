@@ -1,0 +1,24 @@
+# Hugo默认忽略
+/public/
+/resources/_gen/
+.hugo_build.lock
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 临时文件
+*.tmp
+*.log
+
+# IDE文件（如果你用VSCode等）
+.vscode/
+.idea/
+
+# 环境文件
+.env
+EOF
+
+# 2. 可选：创建README.md
+echo "# 我的网站" > README.md
+echo "使用Hugo构建的静态网站" >> README.md

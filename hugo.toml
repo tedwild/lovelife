@@ -1,0 +1,17 @@
+baseURL = "https://lovelifeandhave.fun/"
+languageCode = "zh-cn"
+title = "我的网站"
+theme = "paper"
+
+# 启用构建时的一些优化
+[build]
+  writeStats = true
+
+[services]
+  [services.googleAnalytics]
+    disable = true
+
+# 主题配置（根据所选主题调整）
+[params]
+  author = "你的名字"
+  description = "网站描述"

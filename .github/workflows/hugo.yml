@@ -1,0 +1,38 @@
+name: Deploy Hugo site to Cloudflare Pages
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+env:
+  HUGO_VERSION: "v0.155.2"   # <<< 1. Hugo版本可能需要调整 >>>
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: ${{ env.HUGO_VERSION }}
+          extended: true
+
+      - name: Build
+        run: hugo --minify
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}    # <<< 2. 这个不用改，但要设置Secret >>>
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}  # <<< 3. 这个不用改，但要设置Secret >>>
+          projectName: lovelife                          # <<< 4. 改成你的项目名 >>>
+          directory: ./public
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}         # <<< 5. 这个自动生成，不用改 >>>

@@ -7,7 +7,7 @@ on:
     branches: ["main"]
 
 env:
-  HUGO_VERSION: "vlatest"   # <<< 1. Hugo版本可能需要调整 >>>
+  HUGO_VERSION: "latest"   # <<< 1. Hugo版本可能需要调整 >>>
 
 jobs:
   deploy:

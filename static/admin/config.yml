@@ -1,4 +1,6 @@
 backend:
+  local_backend: true  # 新增,启用本地cms管理功能
+
   name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
 

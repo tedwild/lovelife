@@ -1,5 +1,5 @@
 backend:
-  name: git
+  name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
 
 site_url: https://lovelifeandhave.fun  # 这里必须是你自己的域名

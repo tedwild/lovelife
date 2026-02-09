@@ -1,4 +1,6 @@
 backend:
+  local_backend: true #增加本地cms登录编辑功能，没有这行只能在线编辑，会直接修改git仓库
+
   name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
 

@@ -1,7 +1,5 @@
 backend:
-  local_backend: true  # 新增,启用本地cms管理功能
-
-  name: git-gateway
+  name: git
   branch: main # Branch to update (optional; defaults to master)
 
 site_url: https://lovelifeandhave.fun  # 这里必须是你自己的域名
